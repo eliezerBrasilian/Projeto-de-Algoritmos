@@ -1,0 +1,1 @@
+Tempo gasto: 423.000000 milisegundos.
