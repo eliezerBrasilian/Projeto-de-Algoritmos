@@ -117,7 +117,6 @@ void Menu::menuSelectTipoDeOrdenacao(string tipoDeAlgoritmo,string titulo){
     }while (opcao != 's' || opcao != 'S');
 }
 
-
 void Menu::menuSelectTamanho(string tipoDeOrdenacao,string tipoDeAlgoritmo, string titulo){
     char opcao;
     InsertionSort operacoes;
@@ -125,10 +124,8 @@ void Menu::menuSelectTamanho(string tipoDeOrdenacao,string tipoDeAlgoritmo, stri
     BubbleSort operacoes_bubble_sort;
     ShellSort operacoes_shell_sort;
 
-    
-         cout << "tipo de algoritmo: " << tipoDeAlgoritmo<< endl; 
-         system("pause");
-    do {
+    do 
+    {
         system("cls");
         printf("{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}\n");
         cout <<"{          > MODO " << titulo <<"                      }" << "\n";
@@ -277,74 +274,72 @@ void Menu::menuSelectTamanho(string tipoDeOrdenacao,string tipoDeAlgoritmo, stri
             }
             
         }
-         if(tipoDeAlgoritmo == "bubbleSort"){
+        if(tipoDeAlgoritmo == "bubbleSort"){
             if( tipoDeOrdenacao == "crescente"){
-                if(tolower(opcao) == 's')return;
-                if(tolower(opcao) == 'a'){
-                    operacoes_bubble_sort.operacoes("bubbleSort","crescente",10);
+                    if(tolower(opcao) == 's')return;
+                    if(tolower(opcao) == 'a'){
+                        operacoes_bubble_sort.operacoes("bubbleSort","crescente",10);
+                    }
+                    if(tolower(opcao) == 'b'){
+                        operacoes_bubble_sort.operacoes("bubbleSort","crescente",100);
+                    }
+                    if(tolower(opcao) == 'c'){
+                    operacoes_bubble_sort.operacoes("bubbleSort","crescente",1000);
+                    }
+                    if(tolower(opcao) == 'd'){
+                        operacoes_bubble_sort.operacoes("bubbleSort","crescente",10000);
+                    }
+                    if(tolower(opcao) == 'e'){
+                        operacoes_bubble_sort.operacoes("bubbleSort","crescente",100000);
+                    }
+                    if(tolower(opcao) == 'f'){
+                        operacoes_bubble_sort.operacoes("bubbleSort","crescente",1000000);
+                    }
                 }
-                if(tolower(opcao) == 'b'){
-                    operacoes_bubble_sort.operacoes("bubbleSort","crescente",100);
-                }
-                if(tolower(opcao) == 'c'){
-                operacoes_bubble_sort.operacoes("bubbleSort","crescente",1000);
-                }
-                if(tolower(opcao) == 'd'){
-                    operacoes_bubble_sort.operacoes("bubbleSort","crescente",10000);
-                }
-                if(tolower(opcao) == 'e'){
-                    operacoes_bubble_sort.operacoes("bubbleSort","crescente",100000);
-                }
-                if(tolower(opcao) == 'f'){
-                    operacoes_bubble_sort.operacoes("bubbleSort","crescente",1000000);
-                }
-            }
             if( tipoDeOrdenacao == "decrescente"){
-                if(tolower(opcao) == 's')return;
-                if(tolower(opcao) == 'a'){
-                operacoes_bubble_sort.operacoes("bubbleSort","decrescente",10);
+                    if(tolower(opcao) == 's')return;
+                    if(tolower(opcao) == 'a'){
+                    operacoes_bubble_sort.operacoes("bubbleSort","decrescente",10);
+                    }
+                    if(tolower(opcao) == 'b'){
+                    operacoes_bubble_sort.operacoes("selectOnSort","decrescente",100);
+                    }
+                    if(tolower(opcao) == 'c'){
+                    operacoes_bubble_sort.operacoes("bubbleSort","decrescente",1000);
+                    }
+                    if(tolower(opcao) == 'd'){
+                    operacoes_bubble_sort.operacoes("bubbleSort","decrescente",10000);
+                    }
+                    if(tolower(opcao) == 'e'){
+                        operacoes_bubble_sort.operacoes("bubbleSort","decrescente",100000);
+                    }
+                    if(tolower(opcao) == 'f'){
+                        operacoes_bubble_sort.operacoes("bubbleSort","decrescente",1000000);
+                    }
                 }
-                if(tolower(opcao) == 'b'){
-                operacoes_bubble_sort.operacoes("selectOnSort","decrescente",100);
-                }
-                if(tolower(opcao) == 'c'){
-                operacoes_bubble_sort.operacoes("bubbleSort","decrescente",1000);
-                }
-                if(tolower(opcao) == 'd'){
-                operacoes_bubble_sort.operacoes("bubbleSort","decrescente",10000);
-                }
-                if(tolower(opcao) == 'e'){
-                    operacoes_bubble_sort.operacoes("bubbleSort","decrescente",100000);
-                }
-                if(tolower(opcao) == 'f'){
-                    operacoes_bubble_sort.operacoes("bubbleSort","decrescente",1000000);
-                }
-             }
             else{
-                if(tolower(opcao) == 's')return;
-                if(tolower(opcao) == 'a'){
-                operacoes_bubble_sort.operacoes("bubbleSort","aleatorio",10);
+                    if(tolower(opcao) == 's')return;
+                    if(tolower(opcao) == 'a'){
+                    operacoes_bubble_sort.operacoes("bubbleSort","aleatorio",10);
+                    }
+                    if(tolower(opcao) == 'b'){
+                    operacoes_bubble_sort.operacoes("bubbleSort","aleatorio",100);
+                    }
+                    if(tolower(opcao) == 'c'){
+                    operacoes_bubble_sort.operacoes("bubbleSort","aleatorio",1000);
+                    }
+                    if(tolower(opcao) == 'd'){
+                    operacoes_bubble_sort.operacoes("bubbleSort","aleatorio",10000);
+                    }
+                    if(tolower(opcao) == 'e'){
+                        operacoes_bubble_sort.operacoes("bubbleSort","aleatorio",100000);
+                    }
+                    if(tolower(opcao) == 'f'){
+                        operacoes_bubble_sort.operacoes("bubbleSort","aleatorio",1000000);
+                    }
                 }
-                if(tolower(opcao) == 'b'){
-                operacoes_bubble_sort.operacoes("bubbleSort","aleatorio",100);
-                }
-                if(tolower(opcao) == 'c'){
-                operacoes_bubble_sort.operacoes("bubbleSort","aleatorio",1000);
-                }
-                if(tolower(opcao) == 'd'){
-                operacoes_bubble_sort.operacoes("bubbleSort","aleatorio",10000);
-                }
-                if(tolower(opcao) == 'e'){
-                    operacoes_bubble_sort.operacoes("bubbleSort","aleatorio",100000);
-                }
-                if(tolower(opcao) == 'f'){
-                    operacoes_bubble_sort.operacoes("bubbleSort","aleatorio",1000000);
-                }
-            }
-            
         }
-
-               if(tipoDeAlgoritmo == "shellSort"){
+        if(tipoDeAlgoritmo == "shellSort"){
             if( tipoDeOrdenacao == "crescente"){
                 if(tolower(opcao) == 's')return;
                 if(tolower(opcao) == 'a'){
@@ -410,9 +405,6 @@ void Menu::menuSelectTamanho(string tipoDeOrdenacao,string tipoDeAlgoritmo, stri
             }
             
         }
-       
-
-
        
     }while (opcao != 's' || opcao != 'S');
 }

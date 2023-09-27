@@ -54,7 +54,7 @@ Arquivo::Arquivo() {
     system(path);
     sprintf(path,"mkdir BubbleSort\\arquivos_de_entrada\\decrescente");
     system(path);
-    sprintf(path,"mkdir SelectOnSort\\arquivos_de_entrada\\aleatorio");
+    sprintf(path,"mkdir BubbleSort\\arquivos_de_entrada\\aleatorio");
     system(path);
 
     sprintf(path,"mkdir BubbleSort\\arquivos_de_saida\\crescente");
@@ -76,7 +76,7 @@ Arquivo::Arquivo() {
     system(path);
     sprintf(path,"mkdir ShellSort\\arquivos_de_entrada\\decrescente");
     system(path);
-    sprintf(path,"mkdir SelectOnSort\\arquivos_de_entrada\\aleatorio");
+    sprintf(path,"mkdir ShellSort\\arquivos_de_entrada\\aleatorio");
     system(path);
 
     sprintf(path,"mkdir ShellSort\\arquivos_de_saida\\crescente");
