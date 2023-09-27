@@ -1,13 +1,14 @@
 #ifndef SHELLSORT_H
 #define SHELLSORT_H
 #include <string>
-class ShellSort
+#include "headers/Ordenacao.h"
+class ShellSort : Ordenacao
 {
 
 public:
-   void crescente(int,int*);
-   void decrescente(int,int*);
-   void operacoes(std::string,std::string,int);
+   void crescente(int,int*) override;
+   void decrescente(int,int*) override;
+   void operacoes(std::string,std::string,int) override;
 };
 
 #endif

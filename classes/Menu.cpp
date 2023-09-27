@@ -7,7 +7,7 @@
 #include "headers/SelectionSort.h"
 #include "headers/BubbleSort.h"
 #include "headers/ShellSort.h"
-
+#include "headers/Header.h"
 #include <vector>
 #include <iomanip>
 
@@ -27,7 +27,7 @@ void Menu::exibirMenu(){
     do
     {   
         system("cls");
-        printf("{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}\n");
+        printf("{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}\n");
         printf("{               BEM VINDO AO MENU                     }\n");
         printf("{                                                     }\n");
         printf("{       1 -   INSERCAO (MODO INSERT_ON_SORT)          }\n");
@@ -35,7 +35,7 @@ void Menu::exibirMenu(){
         printf("{       3 -   INSERCAO (MODO BUBBLE_SORT)             }\n");
         printf("{       4 -   INSERCAO (MODO SHELL_SORT)              }\n");
         printf("{                   S - SAIR                          }\n");
-        printf("{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}\n\n");
+        printf("{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}\n\n");
         printf("\t\tescolha uma opcao: ");
         cin >> escolha;
 
@@ -71,18 +71,18 @@ void Menu::menuSelectTipoDeOrdenacao(string tipoDeAlgoritmo,string titulo){
     do {
         system("cls");
         printf("{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}\n");
-        cout <<"{          > MODO " << titulo <<"                      }" << "\n";
+        Header::buildHeader(titulo);
         printf("{                                                  }\n");
-        printf("{       A -   EXIBIR VETOR EM ORDEM ALEATORIA      }\n");
-        printf("{       C -   EXIBIR VETOR EM ORDEM CRESCENTE      }\n");
-        printf("{       D -   EXIBIR VETOR EM ORDEM DECRESCENTE    }\n");
+        printf("{       A -   FAZER ORDENACAO ALEATORIA            }\n");
+        printf("{       C -   FAZER ORDENACAO CRESCENTE            }\n");
+        printf("{       D -   FAZER ORDENACAO DECRESCENTE          }\n");
         printf("{                                                  }\n");
-        printf("{                   S - SAIR                       }\n");
+        printf("{                   V - VOLTAR                     }\n");
         printf("{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}\n\n");
         printf("\t\tescolha uma opcao: ");
         cin >> opcao;
 
-       if(tolower(opcao) == 's')return;
+       if(tolower(opcao) == 'v')return;
     
        if(tolower(opcao) == 'c'){
             if(tipoDeAlgoritmo == "insertOnSort")
@@ -114,7 +114,7 @@ void Menu::menuSelectTipoDeOrdenacao(string tipoDeAlgoritmo,string titulo){
             else if(tipoDeAlgoritmo == "shellSort")
                 menuSelectTamanho("aleatorio","shellSort","ALEATORIO");
        }
-    }while (opcao != 's' || opcao != 'S');
+    }while (true);
 }
 
 void Menu::menuSelectTamanho(string tipoDeOrdenacao,string tipoDeAlgoritmo, string titulo){
@@ -128,7 +128,7 @@ void Menu::menuSelectTamanho(string tipoDeOrdenacao,string tipoDeAlgoritmo, stri
     {
         system("cls");
         printf("{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}\n");
-        cout <<"{          > MODO " << titulo <<"                      }" << "\n";
+        Header::buildHeader(titulo);
         printf("{                                                  }\n");
         printf("{       A -  10                                    }\n");
         printf("{       B -  100                                   }\n");
@@ -136,14 +136,14 @@ void Menu::menuSelectTamanho(string tipoDeOrdenacao,string tipoDeAlgoritmo, stri
         printf("{       D -  10000                                 }\n");
         printf("{       E -  100000                                }\n");
         printf("{       F -  1000000                               }\n");
-        printf("{                   S - SAIR                       }\n");
+        printf("{                   V - VOLTAR                     }\n");
         printf("{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}\n\n");
         printf("\t\tescolha O tamanho do vetor: ");
         cin >> opcao;
 
+        if(tolower(opcao) == 'v')return;
         if(tipoDeAlgoritmo == "insertOnSort"){
             if( tipoDeOrdenacao == "crescente"){
-                if(tolower(opcao) == 's')return;
                 if(tolower(opcao) == 'a'){
                     operacoes.operacoes("insertOnSort","crescente",10);
                 }
@@ -164,7 +164,6 @@ void Menu::menuSelectTamanho(string tipoDeOrdenacao,string tipoDeAlgoritmo, stri
                 }
             }
             if( tipoDeOrdenacao == "decrescente"){
-                if(tolower(opcao) == 's')return;
                 if(tolower(opcao) == 'a'){
                 operacoes.operacoes("insertOnSort","decrescente",10);
                 }
@@ -185,7 +184,6 @@ void Menu::menuSelectTamanho(string tipoDeOrdenacao,string tipoDeAlgoritmo, stri
                 }
              }
             else{
-                if(tolower(opcao) == 's')return;
                 if(tolower(opcao) == 'a'){
                 operacoes.operacoes("insertOnSort","aleatorio",10);
                 }
@@ -210,7 +208,6 @@ void Menu::menuSelectTamanho(string tipoDeOrdenacao,string tipoDeAlgoritmo, stri
       
         if(tipoDeAlgoritmo == "selectOnSort"){
             if( tipoDeOrdenacao == "crescente"){
-                if(tolower(opcao) == 's')return;
                 if(tolower(opcao) == 'a'){
                     operacoes_selection_sort.operacoes("selectOnSort","crescente",10);
                 }
@@ -276,26 +273,25 @@ void Menu::menuSelectTamanho(string tipoDeOrdenacao,string tipoDeAlgoritmo, stri
         }
         if(tipoDeAlgoritmo == "bubbleSort"){
             if( tipoDeOrdenacao == "crescente"){
-                    if(tolower(opcao) == 's')return;
-                    if(tolower(opcao) == 'a'){
-                        operacoes_bubble_sort.operacoes("bubbleSort","crescente",10);
-                    }
-                    if(tolower(opcao) == 'b'){
-                        operacoes_bubble_sort.operacoes("bubbleSort","crescente",100);
-                    }
-                    if(tolower(opcao) == 'c'){
-                    operacoes_bubble_sort.operacoes("bubbleSort","crescente",1000);
-                    }
-                    if(tolower(opcao) == 'd'){
-                        operacoes_bubble_sort.operacoes("bubbleSort","crescente",10000);
-                    }
-                    if(tolower(opcao) == 'e'){
-                        operacoes_bubble_sort.operacoes("bubbleSort","crescente",100000);
-                    }
-                    if(tolower(opcao) == 'f'){
-                        operacoes_bubble_sort.operacoes("bubbleSort","crescente",1000000);
-                    }
+                if(tolower(opcao) == 'a'){
+                    operacoes_bubble_sort.operacoes("bubbleSort","crescente",10);
                 }
+                if(tolower(opcao) == 'b'){
+                    operacoes_bubble_sort.operacoes("bubbleSort","crescente",100);
+                }
+                if(tolower(opcao) == 'c'){
+                    operacoes_bubble_sort.operacoes("bubbleSort","crescente",1000);
+                }
+                if(tolower(opcao) == 'd'){
+                   operacoes_bubble_sort.operacoes("bubbleSort","crescente",10000);
+                }
+                if(tolower(opcao) == 'e'){
+                    operacoes_bubble_sort.operacoes("bubbleSort","crescente",100000);
+                }
+                if(tolower(opcao) == 'f'){
+                    operacoes_bubble_sort.operacoes("bubbleSort","crescente",1000000);
+                }
+            }
             if( tipoDeOrdenacao == "decrescente"){
                     if(tolower(opcao) == 's')return;
                     if(tolower(opcao) == 'a'){
@@ -318,30 +314,28 @@ void Menu::menuSelectTamanho(string tipoDeOrdenacao,string tipoDeAlgoritmo, stri
                     }
                 }
             else{
-                    if(tolower(opcao) == 's')return;
-                    if(tolower(opcao) == 'a'){
+                if(tolower(opcao) == 'a'){
                     operacoes_bubble_sort.operacoes("bubbleSort","aleatorio",10);
-                    }
-                    if(tolower(opcao) == 'b'){
-                    operacoes_bubble_sort.operacoes("bubbleSort","aleatorio",100);
-                    }
-                    if(tolower(opcao) == 'c'){
-                    operacoes_bubble_sort.operacoes("bubbleSort","aleatorio",1000);
-                    }
-                    if(tolower(opcao) == 'd'){
-                    operacoes_bubble_sort.operacoes("bubbleSort","aleatorio",10000);
-                    }
-                    if(tolower(opcao) == 'e'){
-                        operacoes_bubble_sort.operacoes("bubbleSort","aleatorio",100000);
-                    }
-                    if(tolower(opcao) == 'f'){
-                        operacoes_bubble_sort.operacoes("bubbleSort","aleatorio",1000000);
-                    }
                 }
+                if(tolower(opcao) == 'b'){
+                    operacoes_bubble_sort.operacoes("bubbleSort","aleatorio",100);
+                }
+                if(tolower(opcao) == 'c'){
+                    operacoes_bubble_sort.operacoes("bubbleSort","aleatorio",1000);
+                }
+                if(tolower(opcao) == 'd'){
+                    operacoes_bubble_sort.operacoes("bubbleSort","aleatorio",10000);
+                }
+                if(tolower(opcao) == 'e'){
+                    operacoes_bubble_sort.operacoes("bubbleSort","aleatorio",100000);
+                }
+                if(tolower(opcao) == 'f'){
+                    operacoes_bubble_sort.operacoes("bubbleSort","aleatorio",1000000);
+                }
+            }
         }
         if(tipoDeAlgoritmo == "shellSort"){
             if( tipoDeOrdenacao == "crescente"){
-                if(tolower(opcao) == 's')return;
                 if(tolower(opcao) == 'a'){
                     operacoes_shell_sort.operacoes("shellSort","crescente",10);
                 }
@@ -362,18 +356,17 @@ void Menu::menuSelectTamanho(string tipoDeOrdenacao,string tipoDeAlgoritmo, stri
                 }
             }
             if( tipoDeOrdenacao == "decrescente"){
-                if(tolower(opcao) == 's')return;
                 if(tolower(opcao) == 'a'){
-                operacoes_shell_sort.operacoes("shellSort","decrescente",10);
+                    operacoes_shell_sort.operacoes("shellSort","decrescente",10);
                 }
                 if(tolower(opcao) == 'b'){
-                operacoes_shell_sort.operacoes("selectOnSort","decrescente",100);
+                    operacoes_shell_sort.operacoes("selectOnSort","decrescente",100);
                 }
                 if(tolower(opcao) == 'c'){
-                operacoes_selection_sort.operacoes("shellSort","decrescente",1000);
+                    operacoes_selection_sort.operacoes("shellSort","decrescente",1000);
                 }
                 if(tolower(opcao) == 'd'){
-                operacoes_shell_sort.operacoes("shellSort","decrescente",10000);
+                    operacoes_shell_sort.operacoes("shellSort","decrescente",10000);
                 }
                 if(tolower(opcao) == 'e'){
                     operacoes_shell_sort.operacoes("shellSort","decrescente",100000);
@@ -383,18 +376,17 @@ void Menu::menuSelectTamanho(string tipoDeOrdenacao,string tipoDeAlgoritmo, stri
                 }
              }
             else{
-                if(tolower(opcao) == 's')return;
                 if(tolower(opcao) == 'a'){
-                operacoes_shell_sort.operacoes("shellSort","aleatorio",10);
+                    operacoes_shell_sort.operacoes("shellSort","aleatorio",10);
                 }
                 if(tolower(opcao) == 'b'){
-                operacoes_shell_sort.operacoes("shellSort","aleatorio",100);
+                    operacoes_shell_sort.operacoes("shellSort","aleatorio",100);
                 }
                 if(tolower(opcao) == 'c'){
-                operacoes_shell_sort.operacoes("shellSort","aleatorio",1000);
+                    operacoes_shell_sort.operacoes("shellSort","aleatorio",1000);
                 }
                 if(tolower(opcao) == 'd'){
-                operacoes_shell_sort.operacoes("shellSort","aleatorio",10000);
+                    operacoes_shell_sort.operacoes("shellSort","aleatorio",10000);
                 }
                 if(tolower(opcao) == 'e'){
                     operacoes_shell_sort.operacoes("shellSort","aleatorio",100000);
@@ -406,7 +398,7 @@ void Menu::menuSelectTamanho(string tipoDeOrdenacao,string tipoDeAlgoritmo, stri
             
         }
        
-    }while (opcao != 's' || opcao != 'S');
+    }while (true);
 }
 
 

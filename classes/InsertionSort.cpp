@@ -24,17 +24,14 @@ void InsertionSort::operacoes(string tipoDeAlgoritmo, string tipoDeOrdenacao, in
         vetor[i] = i;
         }
         arquivo.salvarEntrada(tipoDeAlgoritmo,tipoDeOrdenacao,size,vetor);
-        InsertionSort ordenacao;
-        ordenacao.crescente(size,vetor);
-        
+        crescente(size,vetor); 
     }
     else if(tipoDeOrdenacao == "decrescente"){
         for(int i = 0; i < size; i++){
         vetor[i] = i;
         }
         arquivo.salvarEntrada(tipoDeAlgoritmo,tipoDeOrdenacao,size,vetor);
-        InsertionSort ordenacao;
-        ordenacao.decrescente(size,vetor);
+        decrescente(size,vetor);
     }
 
     fim = clock();
@@ -46,8 +43,7 @@ void InsertionSort::operacoes(string tipoDeAlgoritmo, string tipoDeOrdenacao, in
     system("pause");
 }
 
-
-void InsertionSort::crescente(int size,int *vetor){
+void InsertionSort::crescente(int size,int *vetor) {
       int chave;
         int i;
 

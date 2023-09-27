@@ -134,7 +134,6 @@ void Arquivo::salvarEntrada(string tipoDeAlgoritmo, string tipoDeOrdenacao, int 
 
     }
 
-    
      if (tipoDeAlgoritmo == "shellSort") {
 
         if (tipoDeOrdenacao == "aleatorio") {
@@ -155,10 +154,7 @@ void Arquivo::salvarEntrada(string tipoDeAlgoritmo, string tipoDeOrdenacao, int 
          fprintf(arquivo, "\n");
         }
 
-
     fclose(arquivo);
-   
-
 }
 
 void Arquivo::salvarSaida(string tipoDeAlgoritmo, string tipoDeOrdenacao, int size, int *vetor) {

@@ -49,8 +49,6 @@ void BubbleSort::operacoes(string tipoDeAlgoritmo, string tipoDeOrdenacao, int s
     system("pause");
 }
 
-
-
 void BubbleSort::crescente(int n,int *arr){
   int temp, trocou;
     do {
