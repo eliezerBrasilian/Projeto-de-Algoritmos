@@ -5,7 +5,6 @@ class Menu
 {
  private:
     char escolha;
-    int tamanho_maximo = 100;
     std::string insertOnSort = "insertOnSort";
     std::string selectOnSort = "selectOnSort";
     std::string bubbleSort = "bubbleSort";
@@ -19,9 +18,7 @@ class Menu
     void exibirMenu();
     void menuSelectTipoDeOrdenacao(std::string,std::string);
     void menuSelectTamanho(std::string,std::string,std::string);
-  
- public:
-    Menu();
+   Menu();
 };
 
 #endif

@@ -1,6 +1,6 @@
-#include "Arquivo.h"
-#include "Aleatorio.h"
-#include "InsertionSort.h"
+#include "headers/Arquivo.h"
+#include "headers/Aleatorio.h"
+#include "headers/InsertionSort.h"
 #include <time.h>
 void InsertionSort::operacoes(string tipoDeAlgoritmo, string tipoDeOrdenacao, int size){
     

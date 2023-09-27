@@ -1,4 +1,4 @@
-#include "Aleatorio.h"
+#include "headers/Aleatorio.h"
 #include <cstdio>
 #include <time.h>
 #include <cstdlib>

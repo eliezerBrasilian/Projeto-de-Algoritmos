@@ -1,6 +1,6 @@
-#include "BubbleSort.h"
-#include "Arquivo.h"
-#include "Aleatorio.h"
+#include "headers/BubbleSort.h"
+#include "headers/Arquivo.h"
+#include "headers/Aleatorio.h"
 #include <time.h>
 #include <string>
 

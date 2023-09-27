@@ -1,20 +1,19 @@
-#include "Menu.h"
+#include "headers/Menu.h"
 #include <iostream>
 #include <cctype> // Para a função tolower
 #include <stdio.h>
 #include <locale.h>
-#include "InsertionSort.h"
-#include "SelectionSort.h"
-#include "BubbleSort.h"
-#include "ShellSort.h"
+#include "headers/InsertionSort.h"
+#include "headers/SelectionSort.h"
+#include "headers/BubbleSort.h"
+#include "headers/ShellSort.h"
 
 #include <vector>
 #include <iomanip>
 
 using namespace std;
 
-Menu::Menu() : tamanho_maximo(100),
-               insertOnSort("insertOnSort"),
+Menu::Menu() : insertOnSort("insertOnSort"),
                selectOnSort("selectOnSort"),
                bubbleSort("bubbleSort"),
                shellSort("shellSort"),
@@ -22,9 +21,8 @@ Menu::Menu() : tamanho_maximo(100),
                titulo_selectOnSort("SELECT_ON_SORT"),
                titulo_bubbleSort("BUBBLE_SORT"),
                titulo_shellSort("SHELL_SORT")
-{
-    setlocale(LC_ALL, "pt_BR.UTF-8");
-}
+               {}
+
 void Menu::exibirMenu(){
     do
     {   
@@ -70,12 +68,6 @@ void Menu::exibirMenu(){
 void Menu::menuSelectTipoDeOrdenacao(string tipoDeAlgoritmo,string titulo){
     char opcao;
 
-
-         cout << "tipo de algoritmo: " << tipoDeAlgoritmo<< endl; 
-         system("pause");
-         cout << "eh insertonSort: " << (tipoDeAlgoritmo == "insertOnSort")<< endl; 
-         cout << "eh selectonSort: " << (tipoDeAlgoritmo == "selectOnSort")<< endl; 
-         system("pause");
     do {
         system("cls");
         printf("{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}\n");

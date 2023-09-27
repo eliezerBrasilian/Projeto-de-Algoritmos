@@ -1,6 +1,6 @@
-#include "ShellSort.h"
-#include "Arquivo.h"
-#include "Aleatorio.h"
+#include "headers/ShellSort.h"
+#include "headers/Arquivo.h"
+#include "headers/Aleatorio.h"
 #include <time.h>
 #include <string>
 

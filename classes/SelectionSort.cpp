@@ -1,6 +1,6 @@
-#include "SelectionSort.h"
-#include "Arquivo.h"
-#include "Aleatorio.h"
+#include "headers/SelectionSort.h"
+#include "headers/Arquivo.h"
+#include "headers/Aleatorio.h"
 #include <time.h>
 #include <string>
 

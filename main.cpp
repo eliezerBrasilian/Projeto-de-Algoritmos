@@ -1,9 +1,9 @@
 #include <iostream>
-#include "Menu.h"
-#include "Aleatorio.h"
-#include "Arquivo.h"
-#include "InsertionSort.h"
-#include "SelectionSort.h"
+#include "headers/Menu.h"
+#include "headers/Aleatorio.h"
+#include "headers/Arquivo.h"
+#include "headers/InsertionSort.h"
+#include "headers/SelectionSort.h"
 int main(){
     Menu menu;
     menu.exibirMenu();
