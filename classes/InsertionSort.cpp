@@ -9,31 +9,19 @@ void InsertionSort::operacoes(string tipoDeAlgoritmo, string tipoDeOrdenacao, in
     inicio = clock();
     double tempoTotalGasto;
     int *vetor = new int[size];
+    Aleatorio aleatorio;
 
+    for(int i = 0; i < size; i++){
+    vetor[i] = i;
+    }
 
-   if(tipoDeOrdenacao == "aleatorio"){
-   Aleatorio aleatorio;
-
-    vetor = aleatorio.gerarSequencia(size);
+    if(tipoDeOrdenacao == "aleatorio")aleatorio.embalhararNumeros(vetor,size);
+    if(tipoDeOrdenacao == "decrescente")decrescente(size,vetor);
+    if(tipoDeOrdenacao == "crescente")crescente(size,vetor);
+       
     arquivo.salvarEntrada(tipoDeAlgoritmo,tipoDeOrdenacao,size,vetor);
-    aleatorio.embalhararNumeros(vetor,size);
-   }
 
-    else if(tipoDeOrdenacao == "crescente"){
-        for(int i = 0; i < size; i++){
-        vetor[i] = i;
-        }
-        arquivo.salvarEntrada(tipoDeAlgoritmo,tipoDeOrdenacao,size,vetor);
-        crescente(size,vetor); 
-    }
-    else if(tipoDeOrdenacao == "decrescente"){
-        for(int i = 0; i < size; i++){
-        vetor[i] = i;
-        }
-        arquivo.salvarEntrada(tipoDeAlgoritmo,tipoDeOrdenacao,size,vetor);
-        decrescente(size,vetor);
-    }
-
+    crescente(size,vetor);    
     fim = clock();
     tempoTotalGasto = ((double)(fim - inicio)/CLOCKS_PER_SEC);
     

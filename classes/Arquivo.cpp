@@ -96,7 +96,7 @@ Arquivo::Arquivo() {
 
 void Arquivo::salvarEntrada(string tipoDeAlgoritmo, string tipoDeOrdenacao, int size, int *vetor) {
     char path[100];
-     cout << "tipo de algoritmo: " << tipoDeAlgoritmo<< endl; 
+
     if (tipoDeAlgoritmo == "insertOnSort") {
 
         if (tipoDeOrdenacao == "aleatorio") {

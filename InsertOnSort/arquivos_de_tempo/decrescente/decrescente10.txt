@@ -1,1 +1,1 @@
-Tempo total gasto: 0.003000
+Tempo total gasto: 0.004000

@@ -12,34 +12,19 @@ void ShellSort::operacoes(string tipoDeAlgoritmo, string tipoDeOrdenacao, int si
     inicio = clock();
     double tempoTotalGasto;
     int *vetor = new int[size];
+    Aleatorio aleatorio;
 
+    for(int i = 0; i < size; i++){
+        vetor[i] = i;
+        }
 
-   if(tipoDeOrdenacao == "aleatorio"){
-   Aleatorio aleatorio;
+    if(tipoDeOrdenacao == "aleatorio")aleatorio.embalhararNumeros(vetor,size);
+    if(tipoDeOrdenacao == "decrescente")decrescente(size,vetor);
+    if(tipoDeOrdenacao == "crescente")crescente(size,vetor);
 
-    vetor = aleatorio.gerarSequencia(size);
     arquivo.salvarEntrada("shellSort",tipoDeOrdenacao,size,vetor);
-    aleatorio.embalhararNumeros(vetor,size);
-   }
-
-    else if(tipoDeOrdenacao == "crescente"){
-        for(int i = 0; i < size; i++){
-        vetor[i] = i;
-        }
-        arquivo.salvarEntrada("shellSort",tipoDeOrdenacao,size,vetor);
-        ShellSort ordenacao;
-        ordenacao.crescente(size,vetor);
-        
-    }
-    else if(tipoDeOrdenacao == "decrescente"){
-        for(int i = 0; i < size; i++){
-        vetor[i] = i;
-        }
-        arquivo.salvarEntrada("shellort",tipoDeOrdenacao,size,vetor);
-        ShellSort ordenacao;
-        ordenacao.decrescente(size,vetor);
-    }
-
+   
+    crescente(size,vetor);
     fim = clock();
     tempoTotalGasto = ((double)(fim - inicio)/CLOCKS_PER_SEC);
     
@@ -48,7 +33,6 @@ void ShellSort::operacoes(string tipoDeAlgoritmo, string tipoDeOrdenacao, int si
 
     system("pause");
 }
-
 
 
 void ShellSort::crescente(int n,int *arr){

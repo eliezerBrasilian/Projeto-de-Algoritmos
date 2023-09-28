@@ -138,7 +138,7 @@ void Menu::menuSelectTamanho(string tipoDeOrdenacao,string tipoDeAlgoritmo, stri
         printf("{       F -  1000000                               }\n");
         printf("{                   V - VOLTAR                     }\n");
         printf("{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}\n\n");
-        printf("\t\tescolha O tamanho do vetor: ");
+        printf("\t\tescolha o tamanho do vetor: ");
         cin >> opcao;
 
         if(tolower(opcao) == 'v')return;
