@@ -20,6 +20,7 @@ class Menu
     void exibirMenu();
     void menuSelectTipoDeOrdenacao(std::string,std::string);
     void menuSelectTamanho(std::string,std::string,std::string);
+    int particao();
    Menu();
 };
 
