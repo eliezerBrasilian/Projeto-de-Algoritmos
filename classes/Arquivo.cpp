@@ -136,6 +136,28 @@ Arquivo::Arquivo() {
     system(path);
     sprintf(path,"mkdir MergeSort\\arquivos_de_tempo\\aleatorio");
     system(path);
+
+
+    sprintf(path,"mkdir HeapSort\\arquivos_de_entrada\\crescente");
+    system(path);
+    sprintf(path,"mkdir HeapSort\\arquivos_de_entrada\\decrescente");
+    system(path);
+    sprintf(path,"mkdir HeapSort\\arquivos_de_entrada\\aleatorio");
+    system(path);
+
+    sprintf(path,"mkdir HeapSort\\arquivos_de_saida\\crescente");
+    system(path);
+    sprintf(path,"mkdir HeapSort\\arquivos_de_saida\\decrescente");
+    system(path);
+    sprintf(path,"mkdir HeapSort\\arquivos_de_saida\\aleatorio");
+    system(path);
+
+    sprintf(path,"mkdir HeapSort\\arquivos_de_tempo\\crescente");
+    system(path);
+    sprintf(path,"mkdir HeapSort\\arquivos_de_tempo\\decrescente");
+    system(path);
+    sprintf(path,"mkdir HeapSort\\arquivos_de_tempo\\aleatorio");
+    system(path);
 }
 
 void Arquivo::salvarEntrada(string tipoDeAlgoritmo, string tipoDeOrdenacao, int size, int *vetor) {
@@ -210,6 +232,18 @@ void Arquivo::salvarEntrada(string tipoDeAlgoritmo, string tipoDeOrdenacao, int 
             sprintf(path, "MergeSort\\arquivos_de_entrada\\crescente\\crescente%d.txt", size);
         } else if (tipoDeOrdenacao == "decrescente") {
             sprintf(path, "MergeSort\\arquivos_de_entrada\\decrescente\\decrescente%d.txt", size);
+        }
+
+    }
+    //
+      if (tipoDeAlgoritmo == "heapSort") {
+
+        if (tipoDeOrdenacao == "aleatorio") {
+            sprintf(path, "HeapSort\\arquivos_de_entrada\\aleatorio\\aleatorio%d.txt", size);
+        } else if (tipoDeOrdenacao == "crescente") {
+            sprintf(path, "HeapSort\\arquivos_de_entrada\\crescente\\crescente%d.txt", size);
+        } else if (tipoDeOrdenacao == "decrescente") {
+            sprintf(path, "HeapSort\\arquivos_de_entrada\\decrescente\\decrescente%d.txt", size);
         }
 
     }
@@ -292,6 +326,18 @@ void Arquivo::salvarSaida(string tipoDeAlgoritmo, string tipoDeOrdenacao, int si
         }
     }
 
+
+     if (tipoDeAlgoritmo == "heapSort") {
+
+        if (tipoDeOrdenacao == "aleatorio") {
+            sprintf(path, "HeapSort\\arquivos_de_saida\\aleatorio\\aleatorio%d.txt", size);
+        } else if (tipoDeOrdenacao == "crescente") {
+            sprintf(path, "HeapSort\\arquivos_de_saida\\crescente\\crescente%d.txt", size);
+        } else if (tipoDeOrdenacao == "decrescente") {
+            sprintf(path, "HeapSort\\arquivos_de_saida\\decrescente\\decrescente%d.txt", size);
+        }
+    }
+
     FILE *arquivo = fopen(path, "w");
 
     fprintf(arquivo, "%d \n", size);
@@ -365,6 +411,16 @@ void Arquivo::salvarTempo(string tipoDeAlgoritmo, string tipoDeOrdenacao, int si
                 sprintf(path, "MergeSort\\arquivos_de_tempo\\crescente\\crescente%d.txt", size);
             } else if (tipoDeOrdenacao == "decrescente") {
                 sprintf(path, "MergeSort\\arquivos_de_tempo\\decrescente\\decrescente%d.txt", size);
+            }
+        }
+
+        if (tipoDeAlgoritmo == "heapSort") {
+            if (tipoDeOrdenacao == "aleatorio") {
+                sprintf(path, "HeapSort\\arquivos_de_tempo\\aleatorio\\aleatorio%d.txt", size);
+            } else if (tipoDeOrdenacao == "crescente") {
+                sprintf(path, "HeapSort\\arquivos_de_tempo\\crescente\\crescente%d.txt", size);
+            } else if (tipoDeOrdenacao == "decrescente") {
+                sprintf(path, "HeapSort\\arquivos_de_tempo\\decrescente\\decrescente%d.txt", size);
             }
         }
 

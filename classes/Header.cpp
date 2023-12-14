@@ -13,6 +13,9 @@ void Header::buildHeader(string titulo){
     else if(titulo == "SHELL_SORT"){
         cout <<"{          > MODO " << titulo <<"                       }" << "\n";
     }
+    else if(titulo == "HEAP_SORT"){
+        cout <<"{          > MODO " << titulo <<"                        }" << "\n";
+    }
     else if(titulo == "ALEATORIO"){
         cout <<"{          > MODO " << titulo <<"                        }" << "\n";
     }

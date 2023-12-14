@@ -15,6 +15,7 @@ class Menu
     std::string titulo_shellSort = "SHELL_SORT";
     std::string titulo_quickSort = "QUICK_SORT";
     std::string titulo_mergeSort = "MERGE_SORT";
+    std::string titulo_heapSort = "HEAP_SORT";
 
  public: 
     void exibirMenu();

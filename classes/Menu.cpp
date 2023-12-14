@@ -10,6 +10,7 @@
 #include "headers/Header.h"
 #include "headers/QuickSort.h"
 #include "headers/MergeSort.h"
+#include "headers/HeapSort.h"
 
 #include <vector>
 #include <iomanip>
@@ -25,7 +26,8 @@ Menu::Menu() : insertOnSort("insertOnSort"),
                titulo_bubbleSort("BUBBLE_SORT"),
                titulo_shellSort("SHELL_SORT"),
                titulo_quickSort("QUICK_SORT"),
-               titulo_mergeSort("MERGE_SORT")
+               titulo_mergeSort("MERGE_SORT"),
+               titulo_heapSort("HEAP_SORT")
                {}
 
 void Menu::exibirMenu(){
@@ -41,6 +43,7 @@ void Menu::exibirMenu(){
         printf("{       4 -   INSERCAO (MODO SHELL_SORT)              }\n");
         printf("{       5 -   INSERCAO (MODO QUICK_SORT)              }\n");
         printf("{       6 -   INSERCAO (MODO MERGE_SORT)              }\n");
+        printf("{       7 -   INSERCAO (MODO HEAP_SORT)               }\n");
         printf("{                   S - SAIR                          }\n");
         printf("{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}\n\n");
         printf("\t\tescolha uma opcao: ");
@@ -69,6 +72,9 @@ void Menu::exibirMenu(){
                  break;
             case '6':
              menuSelectTipoDeOrdenacao("mergeSort", titulo_mergeSort);
+                break;
+            case '7':
+             menuSelectTipoDeOrdenacao("heapSort", titulo_heapSort);
                 break;
 
             default:
@@ -110,6 +116,8 @@ void Menu::menuSelectTipoDeOrdenacao(string tipoDeAlgoritmo,string titulo){
                 menuSelectTamanho("crescente","quickSort","CRESCENTE");
             else if(tipoDeAlgoritmo == "mergeSort")
                 menuSelectTamanho("crescente","mergeSort","CRESCENTE");
+            else if(tipoDeAlgoritmo == "heapSort")
+                menuSelectTamanho("crescente","heapSort","CRESCENTE");
        }
        if(tolower(opcao) == 'd'){
             if(tipoDeAlgoritmo == "insertOnSort")
@@ -124,6 +132,8 @@ void Menu::menuSelectTipoDeOrdenacao(string tipoDeAlgoritmo,string titulo){
                menuSelectTamanho("decrescente","quickSort","DECRESCENTE");
             else if(tipoDeAlgoritmo == "mergeSort")
                 menuSelectTamanho("decrescente","mergeSort","DECRESCENTE");
+            else if(tipoDeAlgoritmo == "heapSort")
+                menuSelectTamanho("decrescente","heapSort","DECRESCENTE");
        }
        if(tolower(opcao) == 'a'){
             if(tipoDeAlgoritmo == "insertOnSort")
@@ -138,11 +148,16 @@ void Menu::menuSelectTipoDeOrdenacao(string tipoDeAlgoritmo,string titulo){
                 menuSelectTamanho("aleatorio","quickSort","ALEATORIO");
             else if(tipoDeAlgoritmo == "mergeSort")
                 menuSelectTamanho("aleatorio","mergeSort","ALEATORIO");
+            else if(tipoDeAlgoritmo == "heapSort")
+                menuSelectTamanho("aleatorio","mergeSort","ALEATORIO");
        }
     }while (true);
 }
 
-void Menu::menuSelectTamanho(string tipoDeOrdenacao,string tipoDeAlgoritmo, string titulo){
+void Menu::menuSelectTamanho(
+string tipoDeOrdenacao,
+string tipoDeAlgoritmo, 
+string titulo){
     char opcao;
     InsertionSort operacoes;
     SelectionSort operacoes_selection_sort;
@@ -150,6 +165,7 @@ void Menu::menuSelectTamanho(string tipoDeOrdenacao,string tipoDeAlgoritmo, stri
     ShellSort operacoes_shell_sort;
     QuickSort operacoes_quick_sort;
     MergeSort operacoes_merge_sort;
+    HeapSort operacoes_heap_sort;
 
     do 
     {
@@ -423,7 +439,6 @@ void Menu::menuSelectTamanho(string tipoDeOrdenacao,string tipoDeAlgoritmo, stri
             }
             
         }
-       
         if(tipoDeAlgoritmo == "quickSort"){
             if( tipoDeOrdenacao == "crescente"){
                 if(tolower(opcao) == 'a'){
@@ -486,10 +501,7 @@ void Menu::menuSelectTamanho(string tipoDeOrdenacao,string tipoDeAlgoritmo, stri
                 }
             }
             
-        }
-       
-
-       
+        }   
         if(tipoDeAlgoritmo == "mergeSort"){
             if( tipoDeOrdenacao == "crescente"){
                 if(tolower(opcao) == 'a'){
@@ -549,6 +561,69 @@ void Menu::menuSelectTamanho(string tipoDeOrdenacao,string tipoDeAlgoritmo, stri
                 }
                 if(tolower(opcao) == 'f'){
                     operacoes_merge_sort.operacoes("mergeSort","aleatorio",1000000);
+                }
+            }
+            
+        }
+        if(tipoDeAlgoritmo == "heapSort"){
+            if( tipoDeOrdenacao == "crescente"){
+                if(tolower(opcao) == 'a'){
+                    operacoes_heap_sort.operacoes("heapSort","crescente",10);
+                }
+                if(tolower(opcao) == 'b'){
+                    operacoes_heap_sort.operacoes("heapSort","crescente",100);
+                }
+                if(tolower(opcao) == 'c'){
+                operacoes_heap_sort.operacoes("heapSort","crescente",1000);
+                }
+                if(tolower(opcao) == 'd'){
+                    operacoes_heap_sort.operacoes("heapSort","crescente",10000);
+                }
+                if(tolower(opcao) == 'e'){
+                    operacoes_heap_sort.operacoes("heapSort","crescente",100000);
+                }
+                if(tolower(opcao) == 'f'){
+                    operacoes_heap_sort.operacoes("heapSort","crescente",1000000);
+                }
+            }
+            if( tipoDeOrdenacao == "decrescente"){
+                if(tolower(opcao) == 'a'){
+                    operacoes_heap_sort.operacoes("heapSort","decrescente",10);
+                }
+                if(tolower(opcao) == 'b'){
+                    operacoes_heap_sort.operacoes("heapSort","decrescente",100);
+                }
+                if(tolower(opcao) == 'c'){
+                    operacoes_heap_sort.operacoes("heapSort","decrescente",1000);
+                }
+                if(tolower(opcao) == 'd'){
+                    operacoes_heap_sort.operacoes("heapSort","decrescente",10000);
+                }
+                if(tolower(opcao) == 'e'){
+                    operacoes_heap_sort.operacoes("heapSort","decrescente",100000);
+                }
+                if(tolower(opcao) == 'f'){
+                    operacoes_heap_sort.operacoes("heapSort","decrescente",1000000);
+                }
+             }
+            else{
+                if(tolower(opcao) == 'a'){
+                    operacoes_heap_sort.operacoes("heapSort","aleatorio",10);
+                }
+                if(tolower(opcao) == 'b'){
+                    operacoes_heap_sort.operacoes("heapSort","aleatorio",100);
+                }
+                if(tolower(opcao) == 'c'){
+                    operacoes_heap_sort.operacoes("heapSort","aleatorio",1000);
+                }
+                if(tolower(opcao) == 'd'){
+                    operacoes_heap_sort.operacoes("heapSort","aleatorio",10000);
+                }
+                if(tolower(opcao) == 'e'){
+                    operacoes_heap_sort.operacoes("heapSort","aleatorio",100000);
+                }
+                if(tolower(opcao) == 'f'){
+                    operacoes_heap_sort.operacoes("heapSort","aleatorio",1000000);
                 }
             }
             
